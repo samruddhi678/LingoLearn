@@ -1,0 +1,6 @@
+{
+  "name": "Language Translator and Learning App",
+  "description": "A real-time language translation and learning application with interactive vocabulary quizzes, daily streaks, and detailed user analytics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

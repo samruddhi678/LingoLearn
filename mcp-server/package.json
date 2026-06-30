@@ -1,0 +1,17 @@
+{
+  "name": "lingolearn-mcp-server",
+  "version": "1.0.0",
+  "description": "LingoLearn Model Context Protocol (MCP) Server",
+  "type": "module",
+  "main": "server.ts",
+  "scripts": {
+    "start": "tsx server.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.1",
+    "@google/genai": "^0.1.1",
+    "express": "^4.19.2",
+    "firebase": "^10.12.2",
+    "dotenv": "^16.4.5"
+  }
+}
