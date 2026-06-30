@@ -251,15 +251,19 @@ npm run dev
 
 Add screenshots of:
 
-###- Home Page
+### Home Page
 <img width="1365" height="638" alt="Screenshot 2026-06-30 193631" src="https://github.com/user-attachments/assets/aa2466b0-6748-4ce8-9ac2-98decfc1826c" />
-###- AI Tutor
-<img width="1364" height="645" alt="Screenshot 2026-06-30 194208" src="https://github.com/user-attachments/assets/dcd4dd42-7973-47db-8795-f9a68c633f27" />
+### Translation Engine
+<img width="1364" height="645" alt="Screenshot 2026-06-30 194208" src="https://github.com/user-attachments/assets/4430c0a6-424c-48b5-9631-aa9f67472d21" />
+### Vocabulary Dictionary
+<img width="1365" height="632" alt="Screenshot 2026-06-30 201201" src="https://github.com/user-attachments/assets/39e80f3c-97e9-444e-92ba-2e80b0a18c11" />
+### AI Quiz Generator
+<img width="1365" height="631" alt="Screenshot 2026-06-30 201223" src="https://github.com/user-attachments/assets/48e7a93c-314e-4ed8-a24a-a6e1cf0baf15" />
+### Analytics Dashboard
+<img width="1365" height="631" alt="Screenshot 2026-06-30 201247" src="https://github.com/user-attachments/assets/d9789597-9355-4630-aabf-368f0e6f7327" />
+### AI Tutor
+<img width="1365" height="630" alt="Screenshot 2026-06-30 201404" src="https://github.com/user-attachments/assets/3993e792-c32f-48a0-8284-842bd2f24877" />
 
-- Translation Engine
-- Vocabulary Dictionary
-- AI Quiz Generator
-- Analytics Dashboard
 
 ---
 
