@@ -28,6 +28,7 @@ export default function VocabularyTab({ user, onXpEarned }: VocabularyTabProps) 
   const [flippedCardId, setFlippedCardId] = useState<string | null>(null);
 
   // Custom word form state
+  const [deleteWordId, setDeleteWordId] = useState<string | null>(null);
   const [showAddForm, setShowAddForm] = useState(false);
   const [customWord, setCustomWord] = useState("");
   const [customTranslation, setCustomTranslation] = useState("");
@@ -76,12 +77,18 @@ export default function VocabularyTab({ user, onXpEarned }: VocabularyTabProps) 
   };
 
   const handleDeleteWord = async (wordId: string) => {
-    if (!confirm("Are you sure you want to delete this word from your vocabulary?")) return;
+    setDeleteWordId(wordId);
+  };
+
+  const confirmDeleteWord = async () => {
+    if (!deleteWordId) return;
     try {
-      await unsaveWord(user.username, wordId);
-      setSavedWords(prev => prev.filter(w => w.id !== wordId));
+      await unsaveWord(user.username, deleteWordId);
+      setSavedWords(prev => prev.filter(w => w.id !== deleteWordId));
     } catch (e) {
       console.error(e);
+    } finally {
+      setDeleteWordId(null);
     }
   };
 
@@ -535,6 +542,50 @@ export default function VocabularyTab({ user, onXpEarned }: VocabularyTabProps) 
                 </button>
               </div>
             </form>
+          </div>
+        </div>
+      )}
+      {/* Delete Confirmation Modal Popup */}
+      {deleteWordId && (
+        <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4 z-50 animate-in fade-in duration-200">
+          <div className="bg-white rounded-3xl shadow-xl max-w-sm w-full border-2 border-slate-200 p-6 relative animate-in fade-in zoom-in-95 duration-200 text-center">
+            <button
+              id="close-delete-modal-btn"
+              onClick={() => setDeleteWordId(null)}
+              className="absolute top-4 right-4 p-1.5 rounded-xl text-slate-400 hover:text-slate-800 hover:bg-slate-50 transition-colors"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            <div className="w-12 h-12 bg-rose-50 rounded-full flex items-center justify-center mx-auto text-rose-600 mb-4">
+              <Trash2 className="w-6 h-6" />
+            </div>
+
+            <h3 className="text-lg font-black text-slate-950 mb-2">
+              Delete Word
+            </h3>
+
+            <p className="text-sm text-slate-500 font-medium mb-6">
+              Are you sure you want to delete this word from your vocabulary? This action cannot be undone.
+            </p>
+
+            <div className="flex items-center justify-center gap-3">
+              <button
+                id="cancel-delete-vocab-btn"
+                type="button"
+                onClick={() => setDeleteWordId(null)}
+                className="px-4 py-2.5 text-sm font-bold text-slate-500 hover:text-slate-800 transition-colors bg-slate-50 hover:bg-slate-100 rounded-xl w-full border border-slate-200"
+              >
+                Cancel
+              </button>
+              <button
+                id="confirm-delete-vocab-btn"
+                onClick={confirmDeleteWord}
+                className="px-4 py-2.5 text-sm font-bold text-white bg-rose-600 hover:bg-rose-700 rounded-xl transition-colors shadow-[2px_2px_0px_rgba(225,29,72,0.2)] w-full"
+              >
+                Delete
+              </button>
+            </div>
           </div>
         </div>
       )}

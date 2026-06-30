@@ -173,16 +173,20 @@ export async function getQuizHistory(username: string): Promise<QuizHistory[]> {
   const quizColRef = collection(db, "quizzes");
   const q = query(
     quizColRef, 
-    where("username", "==", cleanUsername),
-    orderBy("timestamp", "desc"),
-    limit(20)
+    where("username", "==", cleanUsername)
   );
   const querySnapshot = await getDocs(q);
   const results: QuizHistory[] = [];
   querySnapshot.forEach((doc) => {
     results.push({ id: doc.id, ...doc.data() } as QuizHistory);
   });
-  return results;
+  // Sort in memory to avoid composite index requirements
+  results.sort((a, b) => {
+    const timeA = a.timestamp || "";
+    const timeB = b.timestamp || "";
+    return timeB.localeCompare(timeA);
+  });
+  return results.slice(0, 20);
 }
 
 export async function saveWord(username: string, wordData: Omit<SavedWord, "username" | "timestamp" | "status">): Promise<void> {
@@ -214,13 +218,18 @@ export async function getSavedWords(username: string): Promise<SavedWord[]> {
   const wordsColRef = collection(db, "saved_words");
   const q = query(
     wordsColRef,
-    where("username", "==", cleanUsername),
-    orderBy("timestamp", "desc")
+    where("username", "==", cleanUsername)
   );
   const querySnapshot = await getDocs(q);
   const results: SavedWord[] = [];
   querySnapshot.forEach((doc) => {
     results.push(doc.data() as SavedWord);
+  });
+  // Sort in memory to avoid composite index requirements
+  results.sort((a, b) => {
+    const timeA = a.timestamp || "";
+    const timeB = b.timestamp || "";
+    return timeB.localeCompare(timeA);
   });
   return results;
 }
