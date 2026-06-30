@@ -251,8 +251,11 @@ npm run dev
 
 Add screenshots of:
 
-- Home Page
-- AI Tutor
+###- Home Page
+<img width="1365" height="638" alt="Screenshot 2026-06-30 193631" src="https://github.com/user-attachments/assets/aa2466b0-6748-4ce8-9ac2-98decfc1826c" />
+###- AI Tutor
+<img width="1364" height="645" alt="Screenshot 2026-06-30 194208" src="https://github.com/user-attachments/assets/dcd4dd42-7973-47db-8795-f9a68c633f27" />
+
 - Translation Engine
 - Vocabulary Dictionary
 - AI Quiz Generator
