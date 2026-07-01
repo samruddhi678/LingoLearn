@@ -249,8 +249,6 @@ npm run dev
 
 # 📸 Screenshots
 
-Add screenshots of:
-
 ### Home Page
  <img width="1365" height="638" alt="Screenshot 2026-06-30 193631" src="https://github.com/user-attachments/assets/aa2466b0-6748-4ce8-9ac2-98decfc1826c" />
 
