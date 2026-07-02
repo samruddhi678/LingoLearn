@@ -274,12 +274,7 @@ npm run dev
 
 The demonstration showcases:
 
-- AI Tutor
-- Translation Engine
-- Vocabulary Management
-- AI Quiz Generation
-- Learning Analytics
-- Firebase Cloud Synchronization
+https://ai.studio/apps/c812043d-be49-4e8c-958b-88b4223e28f1?fullscreenApplet=true
 
 ---
 
