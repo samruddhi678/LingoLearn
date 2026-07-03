@@ -274,7 +274,7 @@ npm run dev
 
 The demonstration showcases:
 
-https://ai.studio/apps/c812043d-be49-4e8c-958b-88b4223e28f1?fullscreenApplet=true
+https://youtu.be/ciFDZacafoE?si=sV-SELlH1rFNTkrE
 
 ---
 
